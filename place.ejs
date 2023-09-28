@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Plcaes list</title>
+        <style>
+            body{
+                background-color: #0f0f0f;
+            }       
+*,*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.info {
+  margin: 50px 0;
+  text-align: center;
+}
+
+p {
+  color: white;
+  margin-bottom: 20px;
+}
+.block-effect {
+  font-size: calc(8px + 6vw);
+}
+
+.block-reveal {
+  --t: calc(var(--td) + var(--d));
+
+  color: transparent;
+  padding: 4px;
+
+  position: relative;
+  overflow: hidden;
+
+  animation: revealBlock 0s var(--t) forwards;
+}
+
+.block-reveal::after {
+  content: '';
+
+  width: 0%;
+  height: 100%;
+  padding-bottom: 4px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: var(--bc);
+  animation: revealingIn var(--td) var(--d) forwards, revealingOut var(--td) var(--t) forwards;
+}
+
+
+/* animations */
+@keyframes revealBlock {
+  100% {
+    color: white;
+  }
+}
+
+@keyframes revealingIn {
+
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes revealingOut {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+
+}
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display:none}
+img {vertical-align: middle;}
+.slideshow-container {
+    width:90%;
+    height:20%;
+  position: relative;
+  margin: auto;
+}
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(249, 4, 204);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: pink;
+  color: pink;
+}
+.contact{
+    border: 1px solid black;
+    background-color: rgb(241, 43, 185);
+    width: 100%;
+}
+.contact .contact-item{
+    font-family:monospace;
+    font-size: large;
+    color:white;
+}
+
+        </style>
+    </head>
+    <body>
+        <script>
+            let slideIndex = [1,1];
+let slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  let i;
+  let x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+        </script>
+        <h1 class="block-effect" style="--td: 1.8s">
+          <a href="signin" style="color:aliceblue; text-decoration: none; font-size: xx-large;">LOGIN</a>
+          <a href="signup" style="color:aliceblue; text-decoration: none; font-size: xx-large;">SIGNUP</a>
+            <div class="block-reveal" style="--bc: #4040bf; --d: .1s">Hello</div>
+            <div class="block-reveal" style="--bc: #bf4060; --d: .5s">Traveller!</div>
+          </h1>
+          <h1 id="section1" style="color:white">Andhrapradesh Places</h1>
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="https://images.unsplash.com/photo-1588528940113-e908c691801e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YW5kaHJhJTIwcHJhZGVzaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="https://media.istockphoto.com/id/1285898933/photo/tall-buddha-statue-in-andhra-pradesh-state-amaravathi-india.webp?b=1&s=170667a&w=0&k=20&c=jZZBvoZYUGJrbvKbgqPjRVSb8-KrwWt723ldeHP3Erw=" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="https://media.istockphoto.com/id/466098768/photo/srisailam-dam-telangana.webp?b=1&s=170667a&w=0&k=20&c=yV0qqKxSoISY2wclz7bzoQYUk_pahUXLC29arnAUWCI=" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div><br><br><ul style="color:aliceblue">
+    <li>Vishakapatnam</li>
+    <li>Vijayawada</li>
+    <li>Konaseema</li>
+    <li>Nellore</li>
+    <li>Kurnool</li>
+  </ul>
+
+<h1 id="section1" style="color:white">Telengana</h1>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="https://media.istockphoto.com/id/1006011032/photo/ruins-temple-complex-warangal-fort-warangal-telangana-india.webp?b=1&s=170667a&w=0&k=20&c=z1bu6o3w_-aDYyKuf8MLQXtc0NJioJ5G7fYNQAolPzQ=" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="https://images.unsplash.com/photo-1551161242-b5af797b7233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHlkZXJhYmFkfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="https://media.istockphoto.com/id/1007840372/photo/ramappa-temple-palampet-warangal-telangana-india.webp?b=1&s=170667a&w=0&k=20&c=3w2Encgn55xeiNIaobSwisWaM3JL1Z6wQbHHKTYjBHM=" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div><br><br><ul style="color:aliceblue">
+    <li>Hyderabad</li>
+    <li>Adilabad</li>
+    <li>Warangal</li>
+    <li>Hanumakonda</li>
+    <li>Khamam</li>
+  </ul>
+<h1 id="section1" style="color:white">Tamilnadu</h1>
+<div class="slideshow-container">
+  <div class="mySlides1">
+    <img src="https://media.istockphoto.com/id/1175506409/photo/small-village-amidst-terrace-farms-on-hills-of-kodaikanal-tamil-nadu.webp?b=1&s=170667a&w=0&k=20&c=B5FUzceJzWhSg7hr6e_hNXhtazo1h_lJxMAw5M4-cxw=" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="https://media.istockphoto.com/id/1223786272/photo/idols-wearing-colourful-clothes-in-the-brihadeeswarar-temple-in-thanjavur-india.webp?b=1&s=170667a&w=0&k=20&c=KOsj6a_Wyq0iile2k4CgRiV5dHyiiSS2RMuR08Lo_ss=" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="https://media.istockphoto.com/id/1185863094/photo/vivekananda-rock-memorial-kanyakumari-tamil-nadu-india.webp?b=1&s=170667a&w=0&k=20&c=Kd2nBkLL-EeXcLV8sDGps4W0II_NyjfXrppbgJIXZKw=" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div><br><br><ul style="color:aliceblue">
+    <li>Chennai</li>
+    <li>Ooty</li>
+    <li>Madurai</li>
+    <li>Kodaikanal</li>
+    <li>Rameswaram</li>
+  </ul>
+
+<h1 id="section1" style="color:white">Kerala</h1>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="https://media.istockphoto.com/id/477033044/photo/houseboat-on-the-kerala-backwaters-in-india.webp?b=1&s=170667a&w=0&k=20&c=VHJ_vy2A3MrbUfXaVxzAuBQ2KySe2o0ueKPIiMe6gsQ=" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="https://media.istockphoto.com/id/136561314/photo/indian-dance.webp?b=1&s=170667a&w=0&k=20&c=2ArIunUtzPHJdp_bu7NG-alpfMex4Tljr6q0_1DyXOM=" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="https://images.unsplash.com/photo-1580818135730-ebd11086660b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGtlcmFsYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div><br><br>
+<ul style="color:aliceblue">
+    <li>Allepy</li>
+    <li>Wayand</li>
+    <li>Kottayam</li>
+    <li>Munnar</li>
+    <li>Kochi</li>
+  </ul>
+<h1 id="section1" style="color:white">Ooty</h1>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="https://media.istockphoto.com/id/1473643398/photo/i-love-ooty-sign.webp?b=1&s=170667a&w=0&k=20&c=IhF4MPlsIluQxRYqP_QNBWZ1ls3yvvZjp9z_eVFQZbM=" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="https://media.istockphoto.com/id/914636482/photo/ooty-countryside-tamil-nadu-india.webp?b=1&s=170667a&w=0&k=20&c=ViqUtrOMFScYm2Q_pkL3t8WSJplAWiL0QYVqPqtLxrE=" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="https://media.istockphoto.com/id/1280766775/photo/city-view-ooty-from-a-hill-top-in-early-morning-or-dawn.webp?b=1&s=170667a&w=0&k=20&c=uyTfRDSozWn1YVgbkrKIR39uiscNFbYr7wUnUxmFCBQ=" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div><br><br>
+<ul style="color:aliceblue">
+    <li>Avalanche Lake</li>
+    <li>Ooty Lake</li>
+    <li>Emerald Lake</li>
+    <li>Ooty Botanical Gardens</li>
+    <li>Doddabetta Peak</li>
+  </ul>
+<h1 id="section1" style="color:white">Goa</h1>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="https://media.istockphoto.com/id/157579910/photo/the-beach.webp?b=1&s=170667a&w=0&k=20&c=yPaOBmlp750azFx3mloMk_GjXbeQv2QLUDWyye1vdis=" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="https://images.unsplash.com/photo-1587922546307-776227941871?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z29hfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="https://images.unsplash.com/photo-1567005753256-c0529035b300?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z29hfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div><br><br>
+<ul style="color:aliceblue">
+    <li>Palolem Beach</li>
+    <li>Agonda Beach</li>
+    <li>Baga Beach</li>
+    <li>Basilica of Bom Jesus</li>
+    <li>Varca Beach</li>
+  </ul>
+<br><br>
+<div class="contact">
+<div class="contact-item">
+    <center>
+    <h2 id="section3">Make ur trip memorable with us!</h2>
+    <p>We provide trips across some states and we are striving hard to add the places we are providing vehicle facilities also for travellers so that no person will suffer during the trip and friendly guides will help you to visit the places. Thank you</p>
+    <p>We will help you to make ur trip a wonderful memory!</p>
+    <footer>
+        <p>&copy;Make Your Move</p>
+    </footer>
+    <p>Contactus:9876543210</p>
+</center>
+</div>
+</div>
+    </body>
+</html>

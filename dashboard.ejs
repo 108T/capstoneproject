@@ -1,0 +1,515 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Make Your Move</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Make Your Move</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body{
+                background-color: black;
+            }
+            .navbar {
+                width: 100%;
+                background-color:black;
+                overflow: auto;
+            }
+            .navbar a {
+                float: right;
+                text-align: center;
+                padding: 12px;
+                color:white;
+                font-size: 17px;
+                font-family: monospace;
+                text-decoration: none;
+            } 
+            .navbar a:hover {
+                background-color:rgb(235, 17, 195);
+            }
+            @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+            }
+        }
+        .logo{
+            float:left;
+            text-align: center;
+            padding:12px;
+            font-size:xx-large;
+            font-family: Brush Script MT, Brush Script Std, cursiv;
+            color: rgb(227, 78, 222);
+        }
+        .p1{
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            float: inline-end;
+            background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+  background-size:cover;
+        -webkit-animation: slidein 100s;
+        animation: slidein 100s;
+
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;              
+}
+
+@-webkit-keyframes slidein {
+from {background-position: top; background-size:3000px; }
+to {background-position: -100px 0px;background-size:2750px;}
+}
+
+@keyframes slidein {
+from {background-position: top;background-size:3000px; }
+to {background-position: -100px 0px;background-size:2750px;}
+
+}
+        .p1 .book{
+            color:white;
+            text-transform: uppercase;
+            padding: 15px;
+            background-color:rgb(255, 41, 212);
+            font-size: 16px;
+            font-weight: normal;
+            font-family:monospace;
+            width: 20%;
+            align-items:center;
+            text-decoration: none;
+            
+        }
+        .service {
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-item {
+            flex: 1;
+            padding: 50px 10px;
+            border: black solid 3px;
+            text-align: center;
+            margin: 180px 50px;
+            transition: all 1s;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-item:hover {
+            box-shadow: 3px 3px 20px rgb(248, 57, 219);
+        }
+
+        .service-item h2 {
+            font-family: monospace;
+            font-size: 18px;
+            width: 120px;
+            color: #1c88e1;
+            flex: 1;
+        }
+
+        .service-item img {
+            width: 70px;
+            height: 70px;
+            flex: 1;
+        }
+        
+
+.place-text{
+         text-align:center;
+         color:rgb(241, 43, 185);
+}
+
+.place-text h2{
+         text-align:center;
+         letter-spacing:1px;
+         color:white;
+         font-family:sans-serif;
+         font-size: xx-large;
+}
+.checked {
+            color: orange;
+    }
+    .img{
+        background-size: cover;
+    }
+.cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 30px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+.card{
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 0 gray;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 80%;
+  height: auto;
+}
+.card img{
+    position: relative;
+  max-width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+.card .text{
+  padding:10px;
+  color:aliceblue;
+}
+.card .card-box{
+   display:flexbox;
+   flex-flow: row;
+  background-color: rgb(241, 43, 185);
+  font-size: 18px;
+  font-family: monospace;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.card .time{
+  flex:1;
+}
+.card .location{
+    flex:2;
+}
+.card .cost{
+  color: rgb(241, 43, 185);
+  font-size: 20px;
+}
+.zoom-img {
+  float:left;
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.zoom-img .img-card {
+  position: absolute;
+  overflow: hidden;
+}
+
+.img-card img {
+  -webkit-transition: 0.8s ease;
+  transition: 0.8s ease;
+}
+
+.card:hover .zoom-img img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.space{
+    padding: 30px;
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 50px;
+  color: aliceblue;
+}
+.contact{
+    border: 1px solid black;
+    background-color: rgb(241, 43, 185);
+}
+.contact .contact-item{
+    font-family:monospace;
+    font-size: large;
+    color:white;
+}
+.input-container {
+  display: -ms-flexbox; 
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding: 10px;
+  background: rgb(241, 43, 185);
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid rgb(241, 43, 185);
+}
+#live{
+    align-items: center;
+    margin-left: 100px;
+}
+
+    </style>
+    </head>
+    <body>
+            <script>
+              function showAlert() {
+            const destination = document.querySelector('select[name="list"]').value;
+            const date = document.querySelector('.input-field[type="date"]').value;
+            const numberOfTravelers = document.querySelector('.input-field[type="number"]').value;
+            if (destination && date && numberOfTravelers) {
+                alert("Booking successful!\nDestination: " + destination + "\nDate: " + date + "\nNumber of Travelers: " + numberOfTravelers);
+            } else {
+                alert("Booking not successful. Please fill in all fields.");
+            }
+        }
+
+        function fillDetails(destination) {
+            const selectElement = document.querySelector('select[name="list"]');
+            selectElement.value = destination;
+        }
+          </script>
+          <div class="navbar">
+            <a href="#" href="signin"><i class="fa fa-user-circle-o"></i></a>
+              <a class="scroll-link" href="#section3">CONTACTUS</a>
+              <a href="#section2" class="scroll-link">ABOUTUS</a>
+              <a href="signin">LOGOUT</a>
+              <a href="#section4" class="scroll-link">TOURS</a>
+              <a href="#">HOME</a>
+              <div class="logo">Make Your Move</div>
+            </div>
+            <section>
+            <div class="p1">
+              <h1 style="color:white;font-family:monospace;" id="live">Make the trip memorable!</h1>
+              <form style="max-width:500px;margin:auto">
+                <div class="input-container">
+                  <i class="fa fa-location-arrow icon"></i>
+                  <select class="input-field" name="list" >
+                    <option>Andhrapradesh</option>
+                    <option>Telengana</option>
+                    <option>Tamilnadu</option>
+                    <option>Kerala</option>
+                    <option>Ooty</option>
+                    <option>Goa</option>
+                    </select>
+                    
+                </div>
+              
+                <div class="input-container">
+                  <i class="fa fa-calendar icon"></i>
+                  <input class="input-field" type="date" placeholder="date">
+                </div>
+                
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input class="input-field" type="number" placeholder="No.of travelers">
+                </div><br><br>
+              <a href="#" class="book" onclick="showAlert();return false;">book</a>
+              </form>
+            </div>
+        </section>
+            <section class="service">
+              <div class="service-item">
+                  <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293634/tour-guide_onzla9.png">
+                  <h2>100+ Our Local Guides</h2>
+              </div>
+              <div class="service-item">
+                  <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293738/reliability_jbpn4g.png">
+                  <h2>100% Trusted Tour Agency</h2>
+              </div>
+              <div class="service-item">
+                  <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293635/experience_a3fduk.png">
+                  <h2>15+ Years of Travel Experience</h2>
+              </div>
+              <div class="service-item">
+                  <img src="https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293634/feedback_s8z7d9.png">
+                  <h2>Happy and statisfied tourists</h2>
+              </div>
+          </section>
+          <section class="place">
+              <div class="place-text">
+                <h2 id="section4">Travel Places</h2>
+              </div>
+              <div class="cards" onclick="showAlert('Andhrapradesh')">
+                <div class="card">
+                  <div class="zoom-img">
+                    <div class="img-card">
+                       <img src="https://image.shutterstock.com/image-photo/coconutstrees-beautiful-aerial-view-frome-260nw-2150090895.jpg">
+                    </div>
+                  </div>
+                   <div class="text">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <h2 id="section1">Andhrapradesh</h2>
+                    <p class="cost">INR 1870/per person</p>
+                    <div class="card-box"> 
+                      <p class="time"><i class="fa fa-clock-o"></i> 3 Days</p>
+                      <p class="location"><i class="fa fa-plane"></i> Andhrapradesh, India</p>
+                    </div>
+    
+                   </div>
+                </div>
+              <div class="card" onclick="showAlert('Telangana')">
+                        <div class="zoom-img">
+                            <div class="img-card">
+                                <img src="https://image.shutterstock.com/image-photo/charminar-oldcity-area-hyderabad-telangana-260nw-1557680249.jpg">
+                            </div>
+                        </div>
+    
+                        <div class="text">
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                            <h2 id="section1">Telangana</h2>
+              
+                            <p class="cost">INR 1620/ Per Person</p>
+                            <div class="card-box">
+                                <p class="time"><i class="fa fa-clock-o"></i> 4 Days</p>
+                                <p class="location"><i class="fa fa-plane"></i>Telangana, India</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="card">
+                          <div class="zoom-img">
+                              <div class="img-card">
+                                  <img src="https://image.shutterstock.com/image-photo/drone-shot-aerial-view-top-260nw-2119460831.jpg">
+                              </div>
+                          </div>
+      
+                          <div class="text" onclick="showAlert('Tamilnadu')">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <h2 id="section1">Tamilnadu</h2>
+                              <p class="cost">INR 1523/ Per Person</p>
+                              <div class="card-box">
+                                  <p class="time"><i class="fa fa-clock-o"></i> 5 Days</p>
+                                  <p class="location"><i class="fa fa-plane"></i>Tamilnadu, India</p>
+                              </div>
+                          </div>
+                          </div>
+                          <div class="card" onclick="showAlert('Kerala')">
+                            <div class="zoom-img">
+                                <div class="img-card">
+                                    <img src="https://images.unsplash.com/photo-1654530050931-3b02b28570c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1460&q=80.jpg">
+                                </div>
+                            </div>
+        
+                            <div class="text">
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                              <span class="fa fa-star checked"></span>
+                                <h2 id="section1" color:aliceblue;>Kerala</h2>
+                              
+                                <p class="cost">INR 1610/ Per Person</p>
+                                <div class="card-box">
+                                    <p class="time"><i class="fa fa-clock-o"></i> 4 Days</p>
+                                    <p class="location"><i class="fa fa-plane"></i>Tamilnadu, India</p>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="card">
+                              <div class="zoom-img">
+                                  <div class="img-card">
+                                      <img src="https://papikondalu.net.in/assets/images/papikondalu-tour-1200x800.jpg">
+                                  </div>
+                              </div>
+          
+                              <div class="text" onclick="showAlert('Goa')">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <h2 id="section1">Goa</h2>
+                                  
+                                  <p class="cost">INR 1520/ Per Person</p>
+                                  <div class="card-box">
+                                      <p class="time"><i class="fa fa-clock-o"></i> 5 Days</p>
+                                      <p class="location"><i class="fa fa-plane"></i>vizag, India</p>
+                                  </div>
+                              </div>
+                              </div>
+                              <div class="card" onclick="showAlert('Ooty')">
+                                <div class="zoom-img">
+                                    <div class="img-card">
+                                        <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2015/11/Dense-Forests-in-Lambasingi.jpg">
+                                    </div>
+                                </div>
+            
+                                <div class="text">
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                  <span class="fa fa-star checked"></span>
+                                    <h2 section1>Ooty</h2>
+                                    
+                                    <p class="cost">INR 1550/ Per Person</p>
+                                    <div class="card-box">
+                                        <p class="time"><i class="fa fa-clock-o"></i>5 Days</p>
+                                        <p class="location"><i class="fa fa-plane"></i>Vizag, India</p>
+                                    </div>
+                                </div>
+                                </div>
+                      </section> 
+                      </section>
+                      <div class="space"></div>
+                      </div>
+                      <section class="about">
+                        <div>
+                              <h1 style="color:rgb(241, 43, 185);">ABOUT OUR COMPANY</h1>
+                              <h3 id="section2" style="font-size: xx-large;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">We are "Make Your Move" travel agency</h3>
+                              <p style="color: rgb(241, 43, 185);">We are providing trip plans also soon for the customers not only in guiding our tourists but make them feel comfortable is also our main aim</p>
+                                <ul>
+                                    <li>Safe and secure</li>
+                                    <li>15+ Years Experience in travel agency</li>
+                                    <li>Happy tourists</li>
+                                    <li>Friendly guides</li>
+                                    <li>Vehicle services to all places</li>
+                                    <li>Well known for family trip planning</li>
+                                    <li>We are budget friendly</li>
+                            
+                                </ul>  
+                              </div>
+                      </section>
+                      <section class="contact">
+                          <div class="contact-item">
+                              <center>
+                              <h2 id="section3">Contact for any Queries</h2>
+                              <p><i class="fa fa-envelope-o">:mm@gmail.com</i></p>
+                              <p><i class="fa fa-phone-square">:9876543210</i></p>
+                              <p><i class="fa fa-instagram">:Make_your_Move</i></p>
+                              <p><i class="fa fa-whatsapp">:9632156704</i></p>
+                              <h2>Terms and Conditions</h2>
+                              <p>Once the trip is booked the traveller can cancel the trip after booking below 3 days.After 3 days the money can't retunable. Below three days half the money will be returns to your account.The belongings of traveller during the trip time is travellers responsibility we don't take any responsibility. Incase of any disasters if the person died  we are not responsible for the death. Incase of the person travelling commits suicide we are not responsible. Thanking you!</p>
+                          </div>
+                      </center>
+                      </section>    
+    </body>
+</html>

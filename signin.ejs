@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signin m&m</title>
+<style>
+    body{
+      animation: theme 21s linear infinite;
+    
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        width: 100vw;  
+        height: 100vh; 
+        width: 100vmax;
+        height: 100vmax;
+        background: black;
+        animation: background 90s linear infinite;
+    }
+
+    &:after {
+        left: 15vw;
+    }
+
+    &:before {
+        right: 15vw;
+        animation-delay: -30s;
+        animation-direction: reverse;
+    }
+}
+
+
+@keyframes theme {
+    0% {
+        background: pink;
+    }
+    
+    16% {
+        background: rgb(184, 120, 173);
+    }
+    
+    33% {
+        background: rgb(191,125,176);
+    }
+    
+    50% {
+        background: rgb(233, 96, 181);
+    }
+    
+    66% {
+        background: rgb(103, 41, 92);
+    }    
+    
+    83% {
+        background: rgb(211, 37, 144);
+    }
+
+    100% {
+        background: rgb(250, 2, 155);
+    }
+}
+
+@keyframes background {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+     button{
+                border-radius: 20px;
+                border: 3px solid rgb(67, 61, 61);
+                background-color: rgb(233, 96, 181);
+                color: #FFFFFF;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 12px 45px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                transition: transform 80ms ease-in;
+            }
+            button:active{
+                transform: scale(0.95);
+            }
+            button:focus{
+                outline: none;
+            }
+            button.ghost{
+                background-color: transparent;
+                border-color: #FFFFFF;
+            }
+            .social{
+                border: 5px solid black;
+                margin-left: 350px;
+                margin-right: 350px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                color: white;
+                box-shadow: 0px 0px 0px 2px white;
+                transition: box-shadow 0.6s linear;
+            }
+            .social:hover { box-shadow: 0px 0px 0px 6px white; }
+</style>
+
+    </head>
+    <body><br><br><br><br>
+        <div class="slider-thumb">
+        <div class="social"><center><br><br>
+        <h1>Login here</h1><br>
+        <form action="/signinsubmit" method="post" id="login-form">
+            E-Mail:  <input type="email" name="email"><br><br><br>
+            Password:  <input type="password" name="password"><br><br><br>
+            <button>Submit</button><br><br><br><a href="signup">Forgot password?</a><br><br>
+        </center>
+        </form>
+    </div>
+</div>
+    </body>
+</html>
